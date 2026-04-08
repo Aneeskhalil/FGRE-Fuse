@@ -1,8 +1,14 @@
+
 # FGRE-Fuse: A Joint Fusion-Guided Super-Resolution Framework for Low-Light Infrared and Visible Image Fusion
 
-📰 **Publication Status**: This work has been submitted to *Computer Vision and Image Understanding* (Elsevier).
+📰 **Publication Status**: A Version of our work is submitted to 17th International Conference on Signal Processing Systems ICSPS, 2025, IEEE: 
+DOI: 10.1109/ICSPS66615.2025.11347923.
 
 > **FGRE-Fuse** addresses a core challenge in nighttime imaging: when infrared and visible source images are low-resolution, cascading a pre-trained super-resolution model after fusion introduces artifacts and attenuates thermal signatures due to domain mismatch. We solve this with a **fusion-guided training paradigm** that eliminates the need for external high-resolution ground truth entirely.
+
+![Domain Mismatch](Diagrams/domain_mismatch.jpg)
+
+*Motivation: Domain mismatch artifacts introduced when generic SR models (trained on natural images) are applied to fused infrared-visible imagery.*
 
 ---
 
@@ -12,7 +18,7 @@
 - 🌿 **Dual-Branch Fusion** — Parallel Global Context Path (Transformer-based) and Local Texture Path (CNN-based) adaptively integrate thermal saliency and visible texture.
 - 🔬 **ESR-U-Net DRA** — Enhanced Super-Resolution U-Net with Dual Refinement Attention performs 4× upscaling using stacked Reversed U-Blocks and multi-scale attention.
 - 🎯 **Downstream Task Boost** — Improved YOLOv5 object detection mAP@0.5 on M3FD nighttime dataset over all baselines.
-- ⚡ **Computationally Efficient** — 174 GFLOPs, achieving 8.7% lower cost than LEFuse and 95% lower than DIVFusion.
+- ⚡ **Computationally Efficient** — 174 GFLOPs, achieving 8.7% lower cost than LEFuse.
 
 ---
 
@@ -83,13 +89,17 @@ I_LR^fused = BicubicDownsample(I_HR^fused, s=4)  ∈ ℝ^{256×256×3}
 
 This creates LR-HR pairs that are perfectly aligned with the fused domain — no manual annotation, no domain mismatch.
 
+![IR-VIS Fused Example](Diagrams/ir_vi_fused.jpg)
+
+*Example of infrared, visible, and resulting fused image used as self-supervised HR target.*
+
 ---
 
 ## ⚙️ Installation
 
 ### Prerequisites
-- Python 3.8+
-- PyTorch 1.13+ with CUDA support
+- Python 3.10+
+- PyTorch + with CUDA support
 - NVIDIA GPU (tested on RTX 4090, 16 GB RAM)
 
 ### Setup
@@ -182,6 +192,10 @@ python test.py \
 | **FGRE-Fuse** | 7.44 | **53.20** | **26.04** | **0.92** | **2.57** | **10.05** |
 
 ### Super-Resolution vs. Cascaded Pipelines — LLVIP
+
+![Cascade Comparison](Diagrams/CASECADE-Comparison.jpg)
+
+*Qualitative comparison between FGRE-Fuse and cascaded SR pipelines (Bicubic, ESRGAN, SwinIR) on LLVIP nighttime images.*
 
 | Method | PSNR↑ | SSIM↑ | PSNR vs PGT↑ | SSIM vs PGT↑ | AG↑ |
 |---|---|---|---|---|---|
@@ -293,18 +307,7 @@ FGRE-Fuse/
 - Lightweight architecture for drone and embedded deployment
 - Real-world degradation modeling for unpaired sensor data
 
----
 
-## 📄 Citation
-
-If you find this work useful, please cite:
-
-```bibtex
-@article{khalil2025fgrefuse,
-  title     = {FGRE-Fuse: A Joint Fusion-Guided Super-Resolution Framework for Low-Light Infrared and Visible Images Fusion},
-  author    = {Khalil, Anees and Qi, Jin and Muhammad, Ahmad and Rafique, Hafiza Maria},
-  journal   = {Computer Vision and Image Understanding},
-  year      = {2025}
 }
 ```
 
@@ -320,8 +323,7 @@ If you find this work useful, please cite:
 ---
 
 ## 📬 Contact
-
-**Anees Khalil** — School of Information and Communication Engineering, UESTC, Chengdu, China  
+  
 🔗 GitHub: [https://github.com/Aneeskhalil/FGRE-Fuse](https://github.com/Aneeskhalil/FGRE-Fuse)
 
 ---
