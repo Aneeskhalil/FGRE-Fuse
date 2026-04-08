@@ -10,9 +10,9 @@ def transform_image(image):
 
 class HybridDataset(Dataset):
     def __init__(self):
-        vi_dir = r"D:\paper_implimentation\project_root\Hybrid\data\vot_dataset\vi"
-        ir_dir = r"D:\paper_implimentation\project_root\Hybrid\data\vot_dataset\ir"
-        hr_dir = r"D:\paper_implimentation\project_root\Hybrid\data\train_data\HR"
+        vi_dir = r"D:\project_root\Hybrid\data\vot_dataset\vi"
+        ir_dir = r"D:\project_root\Hybrid\data\vot_dataset\ir"
+        hr_dir = r"D:\project_root\Hybrid\data\train_data\HR"
         self.vi_paths = [os.path.join(vi_dir, f) for f in os.listdir(vi_dir) if f.endswith(('.png', '.jpg'))]
         self.ir_paths = [os.path.join(ir_dir, f) for f in os.listdir(ir_dir) if f.endswith(('.png', '.jpg'))]
         self.hr_paths = [os.path.join(hr_dir, f) for f in os.listdir(hr_dir) if f.endswith(('.png', '.jpg'))]
