@@ -193,10 +193,10 @@ def test(ckpt_lefuse, ckpt_unet, vi_path, ir_path, out_path):
 
 if __name__ == "__main__":
     # Paths to directories
-    ckpt_lefuse = r"D:\paper_implimentation\project_root\Hybrid\weights\L2025.pth"
-    ckpt_unet   = r"D:\paper_implimentation\project_root\Hybrid\weights\sr_unet_aug_enhanced.pth"
-    vi_path     = r"D:\paper_implimentation\project_root\Hybrid\data\TEST_data\vi"
-    ir_path     = r"D:\paper_implimentation\project_root\Hybrid\data\TEST_data\ir"
-    out_path    = r"D:\paper_implimentation\project_root\Hybrid\output"
+    ckpt_lefuse = r"D:\project_root\Hybrid\weights\L2025.pth"
+    ckpt_unet   = r"D:\project_root\Hybrid\weights\sr_unet_aug_enhanced.pth"
+    vi_path     = r"D:\project_root\Hybrid\data\TEST_data\vi"
+    ir_path     = r"D:\project_root\Hybrid\data\TEST_data\ir"
+    out_path    = r"D:\project_root\Hybrid\output"
 
     test(ckpt_lefuse, ckpt_unet, vi_path, ir_path, out_path)
