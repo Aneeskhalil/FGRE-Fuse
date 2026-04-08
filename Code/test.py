@@ -1,4 +1,4 @@
-#test.py
+#test_full.py
 import os
 import torch
 import numpy as np
