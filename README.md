@@ -24,7 +24,7 @@ DOI: 10.1109/ICSPS66615.2025.11347923.
 
 ## 📐 Architecture Overview
 
-![Overall Architecture](Diagrams/Diagram.jpg)
+![Overall Architecture](Diagrams/Network_Architecture.png)
 
 *Fig. 1: Overall architecture of FGRE-Fuse. The dual-branch fusion module integrates IR and VIS inputs. The resulting HR fused image is downsampled to create LR-HR pairs for training the ESR-U-Net DRA, which performs 4× super-resolution.*
 
@@ -89,7 +89,7 @@ I_LR^fused = BicubicDownsample(I_HR^fused, s=4)  ∈ ℝ^{256×256×3}
 
 This creates LR-HR pairs that are perfectly aligned with the fused domain — no manual annotation, no domain mismatch.
 
-![IR-VIS Fused Example](Diagrams/ir_vi_fused.jpg)
+![Training](Diagrams/Training.png)
 
 *Example of infrared, visible, and resulting fused image used as self-supervised HR target.*
 
