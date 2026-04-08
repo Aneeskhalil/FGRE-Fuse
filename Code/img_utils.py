@@ -1,4 +1,4 @@
-#img_utils.py
+#image_utils.py
 import cv2
 import torch
 import numpy as np
